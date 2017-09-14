@@ -1,0 +1,6 @@
+*.retry
+secrets.yml
+secrets.yaml
+/ansible/roles/*
+!/ansible/roles/server
+!/ansible/roles/configure-hass

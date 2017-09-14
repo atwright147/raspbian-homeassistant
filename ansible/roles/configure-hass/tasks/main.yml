@@ -1,0 +1,16 @@
+---
+- name: Copy configuration.yaml to HomeAssistant
+  copy:
+    src: ../data/config/configuration.yaml
+    dest: /var/local/homeassistant/.homeassistant/configuration.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+
+- name: Copy secrets.yaml to HomeAssistant
+  copy:
+    src: ../secrets.yaml
+    dest: /var/local/homeassistant/.homeassistant/secrets.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
