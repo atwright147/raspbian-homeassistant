@@ -76,6 +76,71 @@ zwave:
 tts:
   - platform: google
 
-group: !include groups.yaml
+group:
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.freezer_door
+      - group.z_stick
+      - group.environment
+
+  plants_tab:
+    view: yes
+    icon: mdi:flower
+    entities:
+      - group.plant_harry_palmer
+      - group.plant_phil
+
+  freezer_door:
+    name: Freezer Door
+    icon: mdi:account-multiple
+    view: no
+    entities:
+      - sensor.domux_unknown_type0168_id0168_sourcenodeid
+      - sensor.domux_unknown_type0168_id0168_burglar
+      - sensor.domux_unknown_type0168_id0168_access_control
+      - sensor.domux_unknown_type0168_id0168_alarm_level
+      - sensor.domux_unknown_type0168_id0168_alarm_type
+      - binary_sensor.domux_unknown_type0168_id0168_sensor
+
+  z_stick:
+    name: Z-Stick
+    icon: mdi:account-multiple
+    view: no
+    entities:
+      - sensor.aeotec_zw075_smart_switch_gen5_current
+      - sensor.aeotec_zw075_smart_switch_gen5_energy
+      - sensor.aeotec_zw075_smart_switch_gen5_power
+      - sensor.aeotec_zw075_smart_switch_gen5_previous_reading
+      - sensor.aeotec_zw075_smart_switch_gen5_voltage
+
+  environment:
+    name: Environment
+    icon: mdi:account-multiple
+    view: no
+    entities:
+      - sensor.yr_symbol
+      - sun.sun
+
+  plant_harry_palmer:
+    name: Harry Palmer
+    icon: mdi:account-multiple
+    view: no
+    entities:
+      - sensor.harry_palmer_battery
+      - sensor.harry_palmer_moisture
+      - sensor.harry_palmer_temperature
+
+  plant_phil:
+    name: Harry Palmer
+    icon: mdi:account-multiple
+    view: no
+    entities:
+      - sensor.phil_battery
+      - sensor.phil_moisture
+      - sensor.phil_temperature
+
+# group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
