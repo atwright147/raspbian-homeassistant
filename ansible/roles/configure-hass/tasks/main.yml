@@ -6,6 +6,8 @@
     owner: homeassistant
     group: homeassistant
     mode: 0644
+  tags:
+    - config
 
 - name: Copy secrets.yaml to HomeAssistant
   copy:
@@ -14,3 +16,5 @@
     owner: homeassistant
     group: homeassistant
     mode: 0644
+  tags:
+    - config
