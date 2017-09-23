@@ -9,6 +9,16 @@
   tags:
     - config
 
+- name: Copy groups.yaml to HomeAssistant
+  copy:
+    src: ../data/config/groups.yaml
+    dest: /var/local/homeassistant/.homeassistant/groups.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+  tags:
+    - config
+
 - name: Copy secrets.yaml to HomeAssistant
   copy:
     src: ../secrets.yaml
