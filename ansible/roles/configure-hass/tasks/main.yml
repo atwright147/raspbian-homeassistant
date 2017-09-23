@@ -28,3 +28,9 @@
     mode: 0644
   tags:
     - config
+
+- name: Restart Home Assistant
+  shell: systemctl restart home-assistant.service
+  become: yes
+  tags:
+    - config
