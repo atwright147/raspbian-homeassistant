@@ -19,6 +19,16 @@
   tags:
     - config
 
+- name: Copy security-zones.yaml to HomeAssistant
+  copy:
+    src: ../data/config/security-zones.yaml
+    dest: /var/local/homeassistant/.homeassistant/security-zones.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+  tags:
+    - config
+
 - name: Copy secrets.yaml to HomeAssistant
   copy:
     src: ../secrets.yaml

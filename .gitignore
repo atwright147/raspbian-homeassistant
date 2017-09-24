@@ -4,3 +4,4 @@ secrets.yaml
 /ansible/roles/*
 !/ansible/roles/server
 !/ansible/roles/configure-hass
+/data/config/security-zones.yaml
