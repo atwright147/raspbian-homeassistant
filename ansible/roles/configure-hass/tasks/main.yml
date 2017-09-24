@@ -8,6 +8,7 @@
     mode: 0644
   tags:
     - config
+    - hass
 
 - name: Copy groups.yaml to HomeAssistant
   copy:
@@ -18,6 +19,7 @@
     mode: 0644
   tags:
     - config
+    - hass
 
 - name: Copy security-zones.yaml to HomeAssistant
   copy:
@@ -28,6 +30,7 @@
     mode: 0644
   tags:
     - config
+    - hass
 
 - name: Copy secrets.yaml to HomeAssistant
   copy:
@@ -38,9 +41,11 @@
     mode: 0644
   tags:
     - config
+    - hass
 
 - name: Restart Home Assistant
   shell: systemctl restart home-assistant.service
   become: yes
   tags:
     - config
+    - hass
