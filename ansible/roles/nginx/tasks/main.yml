@@ -25,21 +25,21 @@
     - nginx
 
 - name: Update nginx config
-  template: "src=../templates/default-site.conf dest=/etc/nginx/sites-available/{{server.hostname}} owner=www-data group=www-data mode=0644"
+  template: "src=../templates/home-assistant.conf dest=/etc/nginx/sites-available/default owner=www-data group=www-data mode=0644"
   become: yes
   tags:
     - nginx
     - hass
 
-- name: Add Home Assistant config
-  template: "src=../templates/home-assistant.conf dest=/etc/nginx/home-assistant.conf owner=www-data group=www-data mode=0644"
-  become: yes
-  tags:
-    - nginx
-    - hass
+# - name: Add Home Assistant config
+#   template: "src=../templates/home-assistant.conf dest=/etc/nginx/home-assistant.conf owner=www-data group=www-data mode=0644"
+#   become: yes
+#   tags:
+#     - nginx
+#     - hass
 
 - name: Enable site
-  file: src=/etc/nginx/sites-available/{{server.hostname}} dest=/etc/nginx/sites-enabled/{{server.hostname}} owner=www-data group=www-data state=link
+  file: src=/etc/nginx/sites-available/default dest=/etc/nginx/sites-enabled/default owner=www-data group=www-data state=link
   notify:
     - restart nginx
   become: yes
