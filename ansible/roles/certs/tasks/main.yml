@@ -1,0 +1,33 @@
+---
+#
+## Generate some certificates to get nginx up and running
+#
+- name: Create Nginx ssl directory
+  file: path=/etc/nginx/ssl state=directory
+  become: yes
+  tags:
+    - certs
+
+# https://www.ibm.com/support/knowledgecenter/en/SSWHYP_4.0.0/com.ibm.apimgmt.cmc.doc/task_apionprem_gernerate_self_signed_openSSL.html
+- name: Generate self-signed certificate and key
+  command: openssl req \
+    -newkey rsa:2048 \
+    -nodes \
+    -keyout "/etc/nginx/ssl/key.pem" \
+    -x509 \
+    -days 365 \
+    -out "/etc/nginx/ssl/cert.pem"
+    -subj "/C=GB/ST=England/L=Englandshire/O=Rick Sanchez and Co/OU=Org/CN=www.example.com"
+  args:
+    creates: "/etc/nginx/ssl/cert.pem"
+  become: yes
+  tags:
+    - certs
+
+- name: Generate dhparam file
+  command: openssl dhparam -out "/etc/nginx/ssl/dhparams.pem" 512
+  args:
+    creates: "/etc/nginx/ssl/dhparams.pem"
+  become: yes
+  tags:
+    - certs

@@ -4,6 +4,7 @@ secrets.yml
 secrets.yaml
 /ansible/roles/*
 !/ansible/roles/server
+!/ansible/roles/certs
 !/ansible/roles/nginx
 !/ansible/roles/duckdns
 !/ansible/roles/configure-hass

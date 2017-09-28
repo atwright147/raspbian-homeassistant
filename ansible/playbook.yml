@@ -6,6 +6,7 @@
   roles:
     - server
     - nginx
+    - certs
     - debops-contrib.homeassistant
     - configure-hass
     - duckdns
