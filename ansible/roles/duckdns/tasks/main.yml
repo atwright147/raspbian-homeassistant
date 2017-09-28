@@ -1,0 +1,20 @@
+---
+- name: Create DuckDNS directory
+  file: path=/etc/duckdns state=directory
+  tags:
+    - duckdns
+
+- name: Set up DuckDNS updater script
+  template: "src=../templates/updater.sh dest=/etc/duckdns/updater.sh owner=root group=root mode=0700"
+  become: yes
+  tags:
+    - duckdns
+
+- name: Set up DuckDNS updater Cron job
+  cron:
+    name: DuckDNS Updater for {{ server.hostname }}
+    minute: 5
+    user: root
+    job: '/etc/duckdns/updater.sh'
+  tags:
+    - duckdns

@@ -1,1 +1,0 @@
-{"rsync":{"vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/andy/Development/raspbian-homeassistant","disabled":false,"owner":"www-data","group":"www-data","id":"vagrant","nfs":false,"mount_options":["dmode=777","fmode=777"],"__vagrantfile":true}}}

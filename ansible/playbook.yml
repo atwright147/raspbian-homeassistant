@@ -8,3 +8,4 @@
     - nginx
     - debops-contrib.homeassistant
     - configure-hass
+    - duckdns

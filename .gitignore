@@ -1,8 +1,10 @@
+/.vagrant/
 *.retry
 secrets.yml
 secrets.yaml
 /ansible/roles/*
 !/ansible/roles/server
 !/ansible/roles/nginx
+!/ansible/roles/duckdns
 !/ansible/roles/configure-hass
 /data/config/security-zones.yaml
