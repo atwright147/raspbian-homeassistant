@@ -17,6 +17,14 @@
     - sudo
     - nano
     - libudev-dev
+    - libtool
+    - autoconf
+
+- name: Install pip3 packages
+  become: yes
+  pip:
+    name: DTLSSocket
+    executable: pip3
 
 - name: Install Extra Packages
   become: yes

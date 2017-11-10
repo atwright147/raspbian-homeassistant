@@ -6,6 +6,7 @@ default_view:
     - group.z_stick
     - group.environment
     - group.security
+    - group.lights
 
 plants_tab:
   view: yes
@@ -36,6 +37,13 @@ security:
     - binary_sensor.lounge
     - binary_sensor.kitchen
     - binary_sensor.landing
+
+lights:
+  name: Lights
+  icon: mdi:account-multiple
+  view: no
+  entities:
+    - light.hall
 
 z_stick:
   name: Z-Stick

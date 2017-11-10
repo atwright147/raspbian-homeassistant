@@ -6,5 +6,11 @@ server:
   locale: en_GB.UTF-8
   hostname: 'hudsonway'
 
+# homeassistant__optional_python_packages:
+#   - 'DTLSSocket'
+#   - 'Cython'
+#   - 'pytradfri'
+#   - 'setuptools'
+
 duckdns:
   token: 'a7482671-2f15-4b4e-a729-e6299b0e677c'

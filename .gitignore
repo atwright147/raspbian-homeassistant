@@ -7,3 +7,4 @@ secrets.yaml
 !/ansible/roles/duckdns
 !/ansible/roles/configure-hass
 /data/config/security-zones.yaml
+notes.md
