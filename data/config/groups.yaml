@@ -7,6 +7,7 @@ default_view:
     - group.environment
     - group.security
     - group.lights
+    - group.prices
 
 plants_tab:
   view: yes
@@ -44,6 +45,13 @@ lights:
   view: no
   entities:
     - light.hall
+
+prices:
+  name: Prices
+  icon: mdi:account-multiple
+  view: no
+  entities:
+    - sensor.artrage_price
 
 z_stick:
   name: Z-Stick
