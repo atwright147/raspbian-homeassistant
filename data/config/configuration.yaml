@@ -46,6 +46,9 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    domains:
+      - envisalink
 
 # Track the sun
 sun:
