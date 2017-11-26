@@ -43,6 +43,39 @@
     - config
     - hass
 
+- name: Copy customize.yaml to HomeAssistant
+  copy:
+    src: ../data/config/customize.yaml
+    dest: /var/local/homeassistant/.homeassistant/customize.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+  tags:
+    - config
+    - hass
+
+- name: Copy automations.yaml to HomeAssistant
+  copy:
+    src: ../data/config/automations.yaml
+    dest: /var/local/homeassistant/.homeassistant/automations.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+  tags:
+    - config
+    - hass
+
+- name: Copy scripts.yaml to HomeAssistant
+  copy:
+    src: ../data/config/scripts.yaml
+    dest: /var/local/homeassistant/.homeassistant/scripts.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 0644
+  tags:
+    - config
+    - hass
+
 - name: Restart Home Assistant
   shell: systemctl restart home-assistant.service
   become: yes
