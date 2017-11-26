@@ -19,6 +19,7 @@
     - libudev-dev
     - libtool
     - autoconf
+    - python3-pip
 
 - name: Install pip3 packages
   become: yes
