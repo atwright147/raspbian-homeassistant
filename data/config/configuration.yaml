@@ -78,8 +78,7 @@ sensor:
     unit_of_measurement: USD
     value_template: '{{ value_json.query.results.result }}'
 
-zwave:
-  usb_path: /dev/ttyACM0
+# zwave dongle
 
 # Text to speech
 tts:

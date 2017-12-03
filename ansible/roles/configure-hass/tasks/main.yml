@@ -10,6 +10,19 @@
     - config
     - hass
 
+- name: Set up zwave USB dongle
+  blockinfile:
+    path: /var/local/homeassistant/.homeassistant/configuration.yaml
+    marker: "# {mark} ANSIBLE MANAGED BLOCK #"
+    insertafter: "# zwave dongle"
+    content: |2
+      zwave:
+        usb_path: /dev/ttyACM0
+  when: inventory_hostname in groups['pi']|default([])
+  tags:
+    - config
+    - hass
+
 - name: Copy groups.yaml to HomeAssistant
   copy:
     src: ../data/config/groups.yaml
